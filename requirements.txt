@@ -1,0 +1,4 @@
+# RUNPREDICT Requirements
+# Uses Python 3.8+ built-in modules: ast, sys, io, contextlib, random, json, os, unittest
+# Optional testing framework:
+pytest>=7.0.0
