@@ -1,0 +1,106 @@
+{
+    "level_1_basics": [
+        {
+            "id": "b1_arithmetic",
+            "category": "Basics",
+            "template": "x = {val1}\ny = {val2}\nz = x * {multiplier} + y // {divisor}\nprint(z)",
+            "param_ranges": {
+                "val1": [2, 10],
+                "val2": [5, 25],
+                "multiplier": [2, 5],
+                "divisor": [2, 4]
+            },
+            "hint": "Remember integer division (//) truncates to floor integer."
+        },
+        {
+            "id": "b2_swap_ops",
+            "category": "Basics",
+            "template": "a = {val1}\nb = {val2}\na, b = b + {inc}, a * {mult}\nprint(a)\nprint(b)",
+            "param_ranges": {
+                "val1": [3, 8],
+                "val2": [2, 6],
+                "inc": [1, 4],
+                "mult": [2, 3]
+            },
+            "hint": "Tuple assignment evaluates right-hand expressions simultaneously before updating."
+        }
+    ],
+    "level_2_control_flow": [
+        {
+            "id": "c1_loop_accumulator",
+            "category": "Control Flow",
+            "template": "x = {x_start}\ny = {y_start}\nfor i in range({steps}):\n    x = x + i\n    y = y - {decrement}\nprint(x)\nprint(y)",
+            "param_ranges": {
+                "x_start": [1, 5],
+                "y_start": [5, 15],
+                "steps": [2, 5],
+                "decrement": [1, 3]
+            },
+            "hint": "Track x and y at each iteration i = 0, 1, ..., steps-1."
+        },
+        {
+            "id": "c2_conditional_loop",
+            "category": "Control Flow",
+            "template": "total = 0\nfor i in range(1, {limit}):\n    if i % {mod} == 0:\n        total += i * {mult}\n    else:\n        total += {step}\nprint(total)",
+            "param_ranges": {
+                "limit": [5, 10],
+                "mod": [2, 3],
+                "mult": [2, 3],
+                "step": [1, 2]
+            },
+            "hint": "Check the modulo condition on each loop iteration."
+        }
+    ],
+    "level_3_algorithms": [
+        {
+            "id": "a1_gcd_loop",
+            "category": "Algorithms",
+            "template": "a = {val_a}\nb = {val_b}\nwhile b != 0:\n    a, b = b, a % b\nprint(a)",
+            "param_ranges": {
+                "val_a": [12, 48],
+                "val_b": [6, 24]
+            },
+            "hint": "This is Euclid's algorithm for Greatest Common Divisor."
+        },
+        {
+            "id": "a2_fibonacci_iter",
+            "category": "Algorithms",
+            "template": "a, b = {start_a}, {start_b}\nfor _ in range({n_terms}):\n    a, b = b, a + b\nprint(a)",
+            "param_ranges": {
+                "start_a": [0, 1],
+                "start_b": [1, 2],
+                "n_terms": [4, 7]
+            },
+            "hint": "Each step replaces 'a' with 'b' and 'b' with 'a + b'."
+        }
+    ],
+    "level_4_collections": [
+        {
+            "id": "col1_dedup_filter",
+            "category": "Collections",
+            "template": "items = {items_list}\nresult = []\nfor x in items:\n    if x not in result:\n        result.append(x)\nprint(result)",
+            "param_ranges": {
+                "items_list": [
+                    [3, 7, 3, 2, 7, 9],
+                    [1, 5, 2, 5, 1, 8],
+                    [4, 4, 2, 9, 2, 1]
+                ]
+            },
+            "hint": "This algorithm filters out duplicate values while preserving insertion order."
+        },
+        {
+            "id": "col2_dict_frequency",
+            "category": "Collections",
+            "template": "nums = {nums_list}\nfreq = {{}}\nfor n in nums:\n    freq[n] = freq.get(n, 0) + 1\nprint(freq.get({target}, 0))",
+            "param_ranges": {
+                "nums_list": [
+                    [2, 3, 2, 5, 2, 3],
+                    [7, 7, 1, 7, 4, 1],
+                    [9, 8, 9, 9, 1, 8]
+                ],
+                "target": [2, 7, 9]
+            },
+            "hint": "Calculates frequency counts of numbers in the list."
+        }
+    ]
+}
